@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<project default="package">
+	<target name="package" description="make package">
+		<java jar="${arcadia.yuicompressor}" fork="true">
+			<arg line="src/jquery.silverlight.js -o build/jquery.silverlight-min.js --type js"/>
+		</java>
+	</target>
+</project>
