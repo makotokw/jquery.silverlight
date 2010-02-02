@@ -4,7 +4,7 @@
  * Copyright (c) 2009-2010 makoto_kw (makoto.kw@gmail.com)
  * Dual licensed under the MIT and GPL licenses.
  * 
- * Version: 1.0
+ * Version: 0.1
  */
 (function($) {
 	var ua = navigator.userAgent.toLowerCase(),
@@ -31,18 +31,20 @@
  			  		+'<img src="http://go.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight" style="border-style:none"/>'
  					+'</a>'
 			},options);
-			var $obj = $('<object/>');
+			var attr = [], content = [];
 			$.each(['id','data','type','width','height'], function() {
 				var k = this.toString(), v = options[k];
 				if (v !== undefined) {
-					$obj.attr(k,v);
+					attr.push(k+'="'+v.toString()+'"');
 				}
 			});
 			$.each(options.param, function(name, value) {
-				$obj.append($('<param>').attr({name: name,value: value}));
+				content.push('<param name="'+name+'" value="'+value+'">');
 			});
-			$obj.append(options.content);
-			$(this).append($obj);
+			content.push(options.content);
+			// hack! using innerHTML for IE
+			$(this).html('<object '+attr.join('')+'>'+content.join('')+'</object>');
+			return this;
 		}
 	})
 })(jQuery);
