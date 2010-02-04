@@ -5,7 +5,7 @@
  * Licensed under the MIT license.
  * 
  * @author makoto_kw
- * @version @VERSION
+ * @version 0.1
  */
 (function($) {
 	var ua = navigator.userAgent.toLowerCase(),

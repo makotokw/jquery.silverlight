@@ -1,8 +1,11 @@
 <?xml version="1.0" ?>
 <project default="package">
 	<target name="package" description="make package">
+		<loadfile property="version" srcfile="version.txt"/>
+		<copy file="src/jquery.silverlight.js" tofile="dist/jquery.silverlight.js" overwrite="true"/>
+		<replaceregexp match="@VERSION" replace="${version}" flags="g" byline="true" file="dist/jquery.silverlight.js"/>
 		<java jar="${arcadia.yuicompressor}" fork="true">
-			<arg line="src/jquery.silverlight.js -o build/jquery.silverlight-min.js --type js"/>
+			<arg line="dist/jquery.silverlight.js -o dist/jquery.silverlight-min.js --type js"/>
 		</java>
 	</target>
 </project>
