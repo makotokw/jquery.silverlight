@@ -59,6 +59,10 @@
 				width: '100%',
 				height: '500px'
 			}
+		},
+		events: {
+			opened:null,
+			closed:null
 		}
 	}
 	
@@ -82,10 +86,10 @@
 			close();
 		}
 		options = $.extend(true,{},settings,options);
-		show();
+		open();
 		
 		// private function
-		function show() {
+		function open() {
 			var $window = $('#'+options.window.id);
 			if ($window.length == 0) {
 				$window = $('<div/>').attr({id:options.window.id}).css(options.window.css);
@@ -109,12 +113,17 @@
 			$window.silverlight(options.silverlight);
 			resize();
 			$(document).bind('keydown.silverlightbox', function(e) {
-				if (e.keyCode == 27/*ESC*/) close();
+				if (e.keyCode == 27/*ESC*/) {
+					close();
+				}
 				return true
 			});
 			$(window).bind('resize.silverlightbox',function() {
 				resize();
 			});
+			if (options.events.opened) {
+				options.events.opened.apply(this,[]);
+			}
 		}
 		function close() {
 			$(window).unbind('resize.silverlightbox');
