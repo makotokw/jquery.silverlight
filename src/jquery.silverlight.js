@@ -16,6 +16,14 @@
 		isIE = !isOpera && check(/msie/),
 		isWindows = check(/windows|win32/)
 		;
+	
+	// Silverlight versions
+	var defaultVersion = '4';
+	var versions = {
+		'3':{minRuntimeVersion: '3.0.40818.0',content:'<a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=3.0.40818.0" style="text-decoration:none"><img src="http://go.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight" style="border-style:none"/></a>'},
+		'4':{minRuntimeVersion: '4.0.50401.0',content:'<a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.50401.0" style="text-decoration:none"><img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="Get Microsoft Silverlight" style="border-style:none"/></a>'}
+	};
+	
 	// default settings
 	var settings = {
 		silverlight: {
@@ -25,12 +33,10 @@
 			height:'480',
 			param: {
 				onError: 'onSilverlightError',
-				minRuntimeVersion: '3.0.40818.0',
+				minRuntimeVersion: versions[defaultVersion].minRuntimeVersion,
 				autoUpgrade: 'true'
 			},
-			content:'<a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=3.0.40818.0" style="text-decoration:none">'
-			  		+'<img src="http://go.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight" style="border-style:none"/>'
-					+'</a>'
+			content:versions[defaultVersion].content
 		},
 		window: {
 			id: 'silverlightbox',
@@ -226,8 +232,13 @@
 			return this;
 		}
 	});
+	
+	// Global $.silverlight
 	$.extend({
-		silverlightContent: silverlightContent,
-		silverlightBox: silverlightBox
+		silverlight:{
+			versions:versions,
+			toString:silverlightContent,
+			lightbox:silverlightBox
+		}
 	});
 })(jQuery);
