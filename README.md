@@ -89,7 +89,7 @@ Example: Add a silverlight application to the DOM Element
 Example: Show a silvelight app on the Lightbox
 ------------------
 
-	<a id="lightbox" href="#">$.silverlightBox()</a>
+	<a id="lightbox" href="#">$.silverlight.lightbox()</a>
 	<script type="text/javascript">
 	(function($) {
 		$(document).ready(function(){
@@ -110,7 +110,7 @@ Example: Show a silvelight app on the Lightbox
 Example: Using callback function for Lightbox
 ------------------
 
-	<a id="lightbox" href="#">$.silverlightBox()</a>
+	<a id="lightbox" href="#">$.silverlight.lightbox()</a>
 	<script type="text/javascript">
 	(function($) {
 		$(document).ready(function(){
