@@ -33,7 +33,7 @@ Appends object element
 				+'</a>' // default
 	}
 
-silverlight() same as :
+.silverlight() same as :
 
 	$(this).append($.silverlight.toString(options))
 

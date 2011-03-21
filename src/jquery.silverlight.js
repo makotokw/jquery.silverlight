@@ -1,7 +1,7 @@
 /*!
  * jquery.silverlight
  * 
- * Copyright (c) 2010 makoto_kw, http://www.makotokw.com
+ * Copyright (c) 2010-2011 makoto_kw, http://www.makotokw.com
  * Licensed under the MIT license.
  * 
  * @author makoto_kw
@@ -70,7 +70,7 @@
 			opened:null,
 			closed:null
 		}
-	}
+	};
 	
 	function silverlightContent(options) {
 		options = $.extend(true,{},settings.silverlight,options);
@@ -122,7 +122,7 @@
 				if (e.keyCode == 27/*ESC*/) {
 					close();
 				}
-				return true
+				return true;
 			});
 			$(window).bind('resize.silverlightbox',function() {
 				resize();
@@ -186,7 +186,7 @@
 				windowWidth = document.body.clientWidth;
 				windowHeight = document.body.clientHeight;
 			}	
-			return [Math.min(xScroll,windowWidth),Math.max(yScroll,windowHeight),windowWidth,windowHeight]
+			return [Math.min(xScroll,windowWidth),Math.max(yScroll,windowHeight),windowWidth,windowHeight];
 		};
 		
 		// getPageScroll() by quirksmode.com
