@@ -21,7 +21,7 @@
 	var defaultVersion = '4';
 	var versions = {
 		'3':{minRuntimeVersion: '3.0.40818.0',content:'<a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=3.0.40818.0" style="text-decoration:none"><img src="http://go.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight" style="border-style:none"/></a>'},
-		'4':{minRuntimeVersion: '4.0.50401.0',content:'<a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.50401.0" style="text-decoration:none"><img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="Get Microsoft Silverlight" style="border-style:none"/></a>'}
+		'4':{minRuntimeVersion: '4.0.50524.0',content:'<a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.50524.0" style="text-decoration:none"><img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="Get Microsoft Silverlight" style="border-style:none"/></a>'}
 	};
 	
 	// default settings
